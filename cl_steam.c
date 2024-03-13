@@ -703,8 +703,10 @@ void Steam_Startup(void)
 	// this is probably shit? I'm not really sure.
 	// registering a command only *sometimes* feels wrong
 	// but it seems like the right thing to do at the time
-	Cmd_AddCommand("steam_wipeall", Steam_StatWipeAll, "WARNING: this will wipe all your steam stats and achievements, this is meant to be a debug command used for testing.");
 	Cmd_AddCommand("steam_openkeyboard", Steam_OpenOnScreenKeyboard, "[steam_openkeyboard type xpos ypos xsize ysize] polls steam to open the on-screen keyboard");
+	
+	// Reki (March 5 2024): This can be handy, but let's not leave it in for people to get stuffcmd'd when they play a malicious multiplayer server if the community ever does that kinda thing.
+	//Cmd_AddCommand("steam_wipeall", Steam_StatWipeAll, "WARNING: this will wipe all your steam stats and achievements, this is meant to be a debug command used for testing.");
 
 	Steam_Init();
 

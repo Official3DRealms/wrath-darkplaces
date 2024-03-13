@@ -1575,10 +1575,10 @@ float DrawQ_String_Scale(float startx, float starty, const char *text, size_t ma
 	// draw the font at its baseline when using freetype
 	//ftbase_x = 0;
 	ftbase_y = dh * (4.5/6.0);
-
+	
 	if (maxlen < 1)
 		maxlen = 1<<30;
-
+	
 	_DrawQ_SetupAndProcessDrawFlag(flags, NULL, 0);
 	if(!r_draw2d.integer && !r_draw2d_force)
 		return startx + DrawQ_TextWidth_UntilWidth_TrackColors_Scale(text, &maxlen, w, h, sw, sh, NULL, ignorecolorcodes, fnt, 1000000000);

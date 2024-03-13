@@ -5378,6 +5378,10 @@ static void MP_Draw (void)
 	// TODO: this needs to be exposed to R_SetView (or something similar) ASAP [2/5/2008 Andreas]
 	r_refdef.scene.time = realtime;
 
+	// HACK: fix steam overlay corrupting opengl data on amd drivers
+	DrawQ_ResetClipArea();
+	M_DrawCharacter(0, -10, 102);
+
 	// FIXME: this really shouldnt error out lest we have a very broken refdef state...?
 	// or does it kill the server too?
 	PRVM_G_FLOAT(OFS_PARM0) = vid.width;

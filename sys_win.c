@@ -42,6 +42,10 @@ static HANDLE	heventParent;
 static HANDLE	heventChild;
 #endif
 
+// Reki (February 29 2024): make sure dedicated GPUs are preferred
+__declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
+__declspec(dllexport) DWORD AmdPowerXpressRequestHighPerformance = 0x00000001;
+
 
 /*
 ===============================================================================
